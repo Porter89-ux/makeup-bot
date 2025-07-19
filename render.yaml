@@ -1,12 +1,9 @@
-services:
-  - type: web
-    name: makeup-bot
-    env: python
-    runtime: python        # ← именно так, без версии
-    envVars:               # ← здесь задаём версию Python
-      - key: PYTHON_VERSION
-        value: "3.10"
-    buildCommand: ""
-    startCommand: bash start.sh
-    plan: free
-    autoDeploy: true
+ services:
+   - type: web
+     name: makeup-bot
+     env: python
+-    runtime: python
+     buildCommand: ""
+     startCommand: bash start.sh
+     plan: free
+     autoDeploy: true
