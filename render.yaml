@@ -1,9 +1,9 @@
- services:
-   - type: web
-     name: makeup-bot
-     env: python
--    runtime: python
-     buildCommand: ""
-     startCommand: bash start.sh
-     plan: free
-     autoDeploy: true
+services:
+  - type: web
+    name: makeup-bot
+    env: python
+    runtime: python             # <- без дефиса спереди!
+    buildCommand: ""            # <- оставляем пустым
+    startCommand: bash start.sh # <- обязательно для python
+    plan: free
+    autoDeploy: true
