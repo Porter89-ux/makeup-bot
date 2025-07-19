@@ -5,7 +5,7 @@
 +from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes, CallbackQueryHandler
 
 # 🔒 Вставь сюда свой токен от BotFather
-TOKEN = "7719547111:AAFgz...your_token_here..."
+TOKEN = "7719547111:AAFEgzsV98e943mFnoPpCOj0mTma865FYhg"
 
 # 🚀 Команда /start
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
