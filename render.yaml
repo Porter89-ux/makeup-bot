@@ -2,7 +2,7 @@ services:
   - type: web
     name: makeup-bot
     env: python
-    runtime: python-3.10.13     # <- без дефиса спереди!
+    runtime: python             # <- без дефиса спереди!
     buildCommand: ""            # <- оставляем пустым
     startCommand: bash start.sh # <- обязательно для python
     plan: free
