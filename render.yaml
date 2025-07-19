@@ -2,6 +2,7 @@ services:
   - type: web
     name: makeup-bot
     env: python
+    runtime: python-3.10.13      # ← вот эта строка!
     buildCommand: ""
     startCommand: bash start.sh
     plan: free
