@@ -1,3 +1,8 @@
-#!/bin/bash
+#!/usr/bin/env bash
+set -e
+
+# Устанавливаем зависимости
 pip install -r requirements.txt
-python main.py
+
+# Запускаем бота
+python3 main.py
