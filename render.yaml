@@ -2,7 +2,7 @@ services:
   - type: web
     name: makeup-bot
     env: python
-    runtime: python-3.10.13      # полная версия major.minor.patch!
+    runtime: 3.10.13      # полная версия major.minor.patch!
     buildCommand: ""             # ничего не компилируем
     startCommand: bash start.sh  # скрипт запуска
     plan: free
