@@ -1,7 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
+from telegram import (
+    Update,
+    InlineKeyboardButton,
+    InlineKeyboardMarkup,
+)
 from telegram.ext import (
     ApplicationBuilder,
     CommandHandler,
@@ -9,8 +13,8 @@ from telegram.ext import (
     ContextTypes,
 )
 
-# Вставьте сюда свой токен от @BotFather
-TOKEN = "ВАШ_ТОКЕН_ОТ_БОТФАЗЕРА"
+# Вставьте сюда токен, который вам дал BotFather
+TOKEN = "ВАШ_ТОКЕН_ЗДЕСЬ"
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     keyboard = [
@@ -18,12 +22,9 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         [InlineKeyboardButton("📊 Пройти опрос", callback_data="poll")],
         [InlineKeyboardButton("💳 Купить курс", callback_data="buy")],
     ]
-    reply_markup = InlineKeyboardMarkup(keyboard)
-
     await update.message.reply_text(
-        "Привет! Я бот «Макияж для Себя» 💄\n\n"
-        "Выбери, с чего начнём 👇",
-        reply_markup=reply_markup
+        "Привет! Я бот «Макияж для Себя» 💄\n\nВыбери, с чего начнём 👇",
+        reply_markup=InlineKeyboardMarkup(keyboard)
     )
 
 async def poll(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
@@ -38,7 +39,6 @@ async def poll(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     query = update.callback_query
     await query.answer()
-
     if query.data == "about":
         await query.edit_message_text("Этот курс научит тебя делать макияж для себя — просто, понятно и красиво.")
     elif query.data == "poll":
