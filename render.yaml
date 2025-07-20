@@ -2,8 +2,7 @@ services:
   - type: web
     name: makeup-bot
     env: python
-    runtime: 3.10.9
-    buildCommand: ""          # ничего не компилируем
+    buildCommand: pip install -r requirements.txt
     startCommand: bash start.sh
     plan: free
     autoDeploy: true
