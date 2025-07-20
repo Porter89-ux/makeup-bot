@@ -3,7 +3,7 @@ services:
     name: makeup-bot
     env: python
     runtime: 3.10.9
-    buildCommand: ""       # сборка не нужна, всё в start.sh
+    buildCommand: ""          # ничего не компилируем
     startCommand: bash start.sh
     plan: free
     autoDeploy: true
